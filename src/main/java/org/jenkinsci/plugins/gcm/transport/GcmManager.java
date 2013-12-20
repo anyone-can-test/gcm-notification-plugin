@@ -16,6 +16,9 @@ import com.google.android.gcm.server.Sender;
 public class GcmManager {
 
     public static Result send(String userToken, String text) throws IMException {
+	System.out.println("hello");
+
+	
         // Check whether the server token was provided
         String serverApiKey = GcmPublisher.DESCRIPTOR.getApiKey();
         if (StringUtils.isEmpty(serverApiKey)) {

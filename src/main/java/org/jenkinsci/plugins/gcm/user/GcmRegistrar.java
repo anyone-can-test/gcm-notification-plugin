@@ -37,6 +37,9 @@ public class GcmRegistrar extends AbstractModelObject implements UnprotectedRoot
     }
 
     public HttpResponse doRegister(@QueryParameter(required = true) final String token) throws IOException {
+	System.out.println("doRegister()");
+            return HttpResponses.plainText("API token updated successfully.");
+	/*
         User user = getCurrentUser();
         if (user != null) {
             user.addProperty(new GcmUserTokenProperty(token));
@@ -55,6 +58,7 @@ public class GcmRegistrar extends AbstractModelObject implements UnprotectedRoot
                 return;
             }
         };
+	*/
     }
 
     @SuppressWarnings("unchecked")

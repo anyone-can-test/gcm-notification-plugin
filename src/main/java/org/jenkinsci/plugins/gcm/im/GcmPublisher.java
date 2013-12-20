@@ -48,11 +48,13 @@ public final class GcmPublisher extends IMPublisher {
     @Override
     protected String getConfiguredIMId(User user) {
         // Return the GCM token for the given Jenkins user
-        GcmUserTokenProperty p = (GcmUserTokenProperty) user.getProperties().get(GcmUserTokenProperty.DESCRIPTOR);
-        if (p != null) {
-            return p.getToken();
-        }
-        return null;
+        //GcmUserTokenProperty p = (GcmUserTokenProperty) user.getProperties().get(GcmUserTokenProperty.DESCRIPTOR);
+        //if (p != null) {
+        //    return p.getToken();
+        //}
+        //return null;
+	
+	return "test id";
     }
 
 }
