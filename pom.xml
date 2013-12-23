@@ -11,10 +11,10 @@
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>gcm-notification</artifactId>
     <packaging>hpi</packaging>
-
     <name>Google Cloud Messsaging Notification Plugin</name>
     <version>1.1-SNAPSHOT</version>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/GCM+Notification+Plugin</url>
+    
     <developers>
         <developer>
             <id>orrc</id>
@@ -39,7 +39,7 @@
 
         <!-- gcm-server.jar imported locally as per http://stackoverflow.com/questions/11989236 -->
 
-        <!-- required for gcm-server -->
+        <!-- required for gcm-server 
 
         <dependency>
             <groupId>com.google.zxing</groupId>
@@ -51,30 +51,32 @@
             <artifactId>javase</artifactId>
             <version>2.1</version>
         </dependency>
+-->
 
-
-<dependency>
+	<dependency>
         <groupId>org.apache.httpcomponents</groupId>
         <artifactId>httpclient</artifactId>
         <version>4.3</version>
-</dependency>
-<dependency>
-                <groupId>com.googlecode.json-simple</groupId>
-                <artifactId>json-simple</artifactId>
-                <version>1.1</version>
-        </dependency>
+	</dependency>
+	
+	<dependency>
+    	<groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1</version>
+    </dependency>
 
-                <dependency>
-                        <groupId>com.google.code.gson</groupId>
-                        <artifactId>gson</artifactId>
-                        <version>1.4</version>
-                </dependency>
+    <dependency>
+   		<groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>1.4</version>
+    </dependency>
 
-           <dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpmime</artifactId>
-    <version>4.2.4</version>
-</dependency>
+    
+    <dependency>
+    	<groupId>org.apache.httpcomponents</groupId>
+    	<artifactId>httpmime</artifactId>
+    	<version>4.2.4</version>
+	</dependency>
 
 
 

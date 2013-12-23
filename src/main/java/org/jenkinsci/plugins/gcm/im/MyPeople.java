@@ -94,7 +94,6 @@ public class MyPeople {
 
 		String proxyPort = System.getProperty("http.proxyPort");
 		String proxyHost = System.getProperty("http.proxyHost");
-		
 		LOG.info("proxy: " + proxyHost + ":" + proxyPort);
 
 		if(proxyHost != null) {

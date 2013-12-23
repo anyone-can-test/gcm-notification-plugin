@@ -1,6 +1,5 @@
 package org.jenkinsci.plugins.gcm.im;
 
-import hudson.model.User;
 import hudson.plugins.im.IMMessageTarget;
 
 
