@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.gcm.im;
+package com.anyonecantest.jenkins.plugins.mypeople;
 
 import hudson.plugins.im.IMException;
 

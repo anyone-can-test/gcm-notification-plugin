@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.gcm.im;
+package com.anyonecantest.jenkins.plugins.mypeople;
 
 import hudson.plugins.im.IMMessageTarget;
 
@@ -25,7 +25,7 @@ final class GcmMessageTarget implements IMMessageTarget {
         return buddyId;
     }
 
-    /** @return Returns the configured GCM token for this target, or {@code null}. */
+    /** @return Returns null */
     String getToken() {
     	return null;
     	
