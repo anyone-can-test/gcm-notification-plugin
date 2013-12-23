@@ -12,7 +12,7 @@ import hudson.plugins.im.build_notify.BuildToChatNotifier;
 
 import java.util.List;
 
-import org.jenkinsci.plugins.gcm.user.GcmUserTokenProperty;
+
 
 public final class GcmPublisher extends IMPublisher {
 
@@ -42,19 +42,13 @@ public final class GcmPublisher extends IMPublisher {
     @Override
     protected String getPluginName() {
         // Used in log messages
-        return "GCM";
+        return "MyPeople";
     }
 
     @Override
     protected String getConfiguredIMId(User user) {
-        // Return the GCM token for the given Jenkins user
-        //GcmUserTokenProperty p = (GcmUserTokenProperty) user.getProperties().get(GcmUserTokenProperty.DESCRIPTOR);
-        //if (p != null) {
-        //    return p.getToken();
-        //}
-        //return null;
+    	return null;
 	
-	return "test id";
     }
 
 }

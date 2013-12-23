@@ -1,6 +1,7 @@
 package org.jenkinsci.plugins.gcm.im;
 
 import hudson.plugins.im.IMConnection;
+
 import hudson.plugins.im.IMConnectionProvider;
 import hudson.plugins.im.IMException;
 

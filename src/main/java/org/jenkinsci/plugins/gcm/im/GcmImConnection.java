@@ -9,10 +9,9 @@ import hudson.plugins.im.IMPresence;
 
 import java.io.IOException;
 
-import org.jenkinsci.plugins.gcm.transport.GcmManager;
-import org.jenkinsci.plugins.gcm.user.GcmUserTokenProperty;
 
-import com.google.android.gcm.server.Result;
+//import com.google.android.gcm.server.Result;
+
 
 final class GcmImConnection implements IMConnection {
 
@@ -40,7 +39,9 @@ final class GcmImConnection implements IMConnection {
 
     }
 
+	/*
     private void checkResult(Result result, String userId) throws IMException {
+    
         if (result.getMessageId() == null
                 || result.getCanonicalRegistrationId() == null)
             return;
@@ -53,7 +54,9 @@ final class GcmImConnection implements IMConnection {
         } catch (IOException e) {
             throw new IMException(e);
         }
+      
     }
+      */
 
     @Override
     public boolean connect() {

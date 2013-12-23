@@ -93,6 +93,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
             throws FormException {
         final String t = req.getParameter(PARAM_TARGETS);
 
+        /*
         final String[] givenTargets;
         if (t == null) {
             givenTargets = new String[0];
@@ -100,6 +101,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
             givenTargets = t.split("[\\s,]+");
         }
 
+        
         // From the users listed, determine which ones are actual Jenkins users
         List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(givenTargets.length);
         for (String userId : givenTargets) {
@@ -108,7 +110,13 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
                 targets.add(new GcmMessageTarget(user.getId()));
             }
         }
+        */
+        
+        // for testing
+        List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(1);
+        targets.add(new GcmMessageTarget(t));
 
+        
         // Boilerplate advanced configuration stuff from IMPublisher/notification-strategy.jelly
         String n = req.getParameter(getParamNames().getStrategy());
         if (n == null) {
@@ -185,9 +193,9 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
             }
 
             @Override
-            public IMMessageTarget fromString(String userId)
+            public IMMessageTarget fromString(String buddyId)
                     throws IMMessageTargetConversionException {
-                return new GcmMessageTarget(userId);
+                return new GcmMessageTarget(buddyId);
             }
         };
     }
