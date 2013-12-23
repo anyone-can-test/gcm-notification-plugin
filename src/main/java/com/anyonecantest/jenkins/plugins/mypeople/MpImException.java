@@ -5,11 +5,11 @@ import hudson.plugins.im.IMException;
 import java.io.PrintWriter;
 
 /** Overrides IMException so that unrequired stack traces are not printed. */
-public class GcmImException extends IMException {
+public class MpImException extends IMException {
 
     private static final long serialVersionUID = 1L;
 
-    public GcmImException(String msg) {
+    public MpImException(String msg) {
         super(msg);
     }
 

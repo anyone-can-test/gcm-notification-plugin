@@ -10,37 +10,29 @@ import hudson.plugins.im.IMPresence;
 import java.io.IOException;
 
 
-final class GcmImConnection implements IMConnection {
+final class MpImConnection implements IMConnection {
 
-    private static final GcmImConnection INSTANCE = new GcmImConnection();
+    private static final MpImConnection INSTANCE = new MpImConnection();
 
-    static GcmImConnection getInstance() {
+    static MpImConnection getInstance() {
         return INSTANCE;
     }
 
     @Override
-    public void send(IMMessageTarget target, String text) throws IMException {
+    public void send(IMMessageTarget target, String text) throws MpImException {
     	
-        GcmMessageTarget gcmTarget = (GcmMessageTarget) target;
+        MpMessageTarget gcmTarget = (MpMessageTarget) target;
         String buddyId = gcmTarget.getBuddyId();
 
-		try {
-			
-			//MyPeople.setAPIKEY("4200547f3ebd3d29061cc9ee456b266252de1271");
-			//MyPeople.sendMessage("BU_lQaA7mh5f5bCAq_5lz7aOw00", text);
-			
-			String apikey = GcmPublisher.DESCRIPTOR.getApiKey();
-			MyPeople.setAPIKEY(apikey);
-			boolean bSuccess = MyPeople.sendMessage(buddyId, text);
-			
-			
-			if (bSuccess == false) {
-				throw new IMException("sending error");
-			}
-		}catch (Exception e) {
-			throw new IMException(e);
-		}
 
+			
+        //MyPeople.setAPIKEY("4200547f3ebd3d29061cc9ee456b266252de1271");
+		//MyPeople.sendMessage("BU_lQaA7mh5f5bCAq_5lz7aOw00", text);
+			
+		String apikey = MpPublisher.DESCRIPTOR.getApiKey();
+		MyPeople.setAPIKEY(apikey);
+		MyPeople.sendMessage(buddyId, text);
+			
     }
 
 

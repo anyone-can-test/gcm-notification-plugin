@@ -1,6 +1,7 @@
 package com.anyonecantest.jenkins.plugins.mypeople;
 
 import hudson.model.AutoCompletionCandidates;
+
 import hudson.model.AbstractProject;
 import hudson.model.User;
 import hudson.plugins.im.IMMessageTarget;
@@ -20,11 +21,10 @@ import java.util.List;
 
 import net.sf.json.JSONObject;
 
-import org.jenkinsci.plugins.gcm.Messages;
 import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.StaplerRequest;
 
-public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> implements IMPublisherDescriptor {
+public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implements IMPublisherDescriptor {
 
     // Distinguishes the config for this IM plugin from others
     private static final String PREFIX = "gcm.";
@@ -46,10 +46,10 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
     // Server API key from the Google API console
     private String apiKey;
 
-    public GcmPublisherDescriptor() {
-        super(GcmPublisher.class);
+    public MpPublisherDescriptor() {
+        super(MpPublisher.class);
         load();
-        GcmImConnectionProvider.getInstance().setDescriptor(this);
+        MpImConnectionProvider.getInstance().setDescriptor(this);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
     }
 
     @Override
-    public GcmPublisher newInstance(final StaplerRequest req, JSONObject formData)
+    public MpPublisher newInstance(final StaplerRequest req, JSONObject formData)
             throws FormException {
         final String t = req.getParameter(PARAM_TARGETS);
 
@@ -114,7 +114,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
         
         // for testing
         List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(1);
-        targets.add(new GcmMessageTarget(t));
+        targets.add(new MpMessageTarget(t));
 
         
         // Boilerplate advanced configuration stuff from IMPublisher/notification-strategy.jelly
@@ -146,7 +146,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
         }
 
         try {
-            return new GcmPublisher(targets, n, notifyStart, notifySuspects, notifyCulprits,
+            return new MpPublisher(targets, n, notifyStart, notifySuspects, notifyCulprits,
                     notifyFixers, notifyUpstream,
                     req.bindJSON(BuildToChatNotifier.class,formData.getJSONObject("buildToChatNotifier")),
                     matrixJobMultiplier);
@@ -195,7 +195,7 @@ public class GcmPublisherDescriptor extends BuildStepDescriptor<Publisher> imple
             @Override
             public IMMessageTarget fromString(String buddyId)
                     throws IMMessageTargetConversionException {
-                return new GcmMessageTarget(buddyId);
+                return new MpMessageTarget(buddyId);
             }
         };
     }

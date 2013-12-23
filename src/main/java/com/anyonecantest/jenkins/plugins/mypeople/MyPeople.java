@@ -1,6 +1,7 @@
 package com.anyonecantest.jenkins.plugins.mypeople;
 
 import java.io.IOException;
+
 import java.io.UnsupportedEncodingException;
 
 import net.sf.json.JSONObject;
@@ -51,38 +52,34 @@ public class MyPeople {
 		API_URL_POSTFIX = "?apikey=" + MYPEOPLE_BOT_APIKEY;
 	}
 
-	
-	public static String getMessage() {
 		
-		String msg;
-		msg = "Build Failure!!!";
-		
-		return msg;
-	}
-	
- 
-	public static boolean sendMessage(String buddyId, String msg) throws ClientProtocolException, IOException, UnsupportedEncodingException
+	public static void sendMessage(String buddyId, String msg) throws MpImException 
+			//throws ClientProtocolException, IOException, UnsupportedEncodingException, MpImException
         {
-		String requestUrl = MyPeople.API_URL_PREFIX + "/mypeople/buddy/send.json";
-        requestUrl += API_URL_POSTFIX;
+		
+		try {
+			String requestUrl = MyPeople.API_URL_PREFIX + "/mypeople/buddy/send.json";
+			requestUrl += API_URL_POSTFIX;
    
 	
-		MultipartEntity reqEntity = new MultipartEntity();
+			MultipartEntity reqEntity = new MultipartEntity();
 
-		StringBody sbody = new StringBody(buddyId);
-		reqEntity.addPart("buddyId", sbody);
+			StringBody sbody = new StringBody(buddyId);
+			reqEntity.addPart("buddyId", sbody);
 
-		sbody = new StringBody(msg);
-		reqEntity.addPart("content", sbody);
+			sbody = new StringBody(msg);
+			reqEntity.addPart("content", sbody);
 
-
-   		return postData(requestUrl, reqEntity); 
+			postData(requestUrl, reqEntity);
+		}catch(IOException e) {
+			
+		}
 
 	}
 
 
 
-	public static boolean postData(String url, MultipartEntity reqEntity) throws ClientProtocolException, IOException {
+	public static void postData(String url, MultipartEntity reqEntity) throws ClientProtocolException, IOException, MpImException {
 
 		LOG.info("url: " + url);
 
@@ -109,11 +106,11 @@ public class MyPeople {
 		
 		JSONObject jo = JSONObject.fromObject(result);
 		int resultCode = Integer.valueOf((String)jo.get(MyPeople.RESULT_CODE_NAME));
-		if(resultCode == MyPeople.RESULT_OK) {
-			return true;
+		if(resultCode != MyPeople.RESULT_OK) {
+			throw new MpImException((String)jo.get(MyPeople.RESULT_MESSAGE_NAME));
 		}
 		
-		return false;						
+								
 	}
 
 }

@@ -3,9 +3,10 @@ package com.anyonecantest.jenkins.plugins.mypeople;
 import hudson.plugins.im.IMMessageTarget;
 
 
+
 import org.kohsuke.stapler.export.Exported;
 
-final class GcmMessageTarget implements IMMessageTarget {
+final class MpMessageTarget implements IMMessageTarget {
 
     private static final long serialVersionUID = 1L;
 
@@ -16,7 +17,7 @@ final class GcmMessageTarget implements IMMessageTarget {
      * 
      * @param buddyId My People buddy ID.
      */
-    GcmMessageTarget(String buddyId) {
+    MpMessageTarget(String buddyId) {
         this.buddyId = buddyId;
     }
 
