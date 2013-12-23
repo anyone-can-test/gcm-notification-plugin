@@ -8,18 +8,19 @@
         <relativePath>../instant-messaging-parent-plugin/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>gcm-notification</artifactId>
+	<artifactId>mypeople</artifactId>
+    <groupId>com.anyonecantest.jenkins.plugins</groupId>
+    <version>0.2</version>
     <packaging>hpi</packaging>
-    <name>Google Cloud Messsaging Notification Plugin</name>
-    <version>1.1-SNAPSHOT</version>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/GCM+Notification+Plugin</url>
+    <name>Jenkins Daum My People Messanger Notification plugin</name>
+    <description>Sends notifications about jobs phases and status to Daum My People messanger (mypeople.daum.net‎)</description>
+    <url>https://github.com/anyone-can-test/mypeople-plugin</url>
     
     <developers>
         <developer>
-            <id>orrc</id>
-            <name>Christopher Orr</name>
-            <email>chris@orr.me.uk</email>
+            <id>anyone-can-test</id>
+            <name>Hyunil Shin</name>
+            <email>anyone.can.test@gmail.com</email>
             <timezone>1</timezone>
         </developer>
     </developers>
@@ -94,9 +95,7 @@
     </build>
 
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/gcm-notification-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/gcm-notification-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/gcm-notification-plugin</url>
+        <url>https://github.com/anyone-can-test/mypeople-plugin</url>
     </scm>
 
     <repositories>
