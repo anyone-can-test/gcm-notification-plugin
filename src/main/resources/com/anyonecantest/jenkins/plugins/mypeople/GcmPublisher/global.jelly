@@ -3,18 +3,6 @@
   xmlns:super="/hudson/plugins/im/IMPublisher">
 
     <f:section title="Daum My People Messaging Notifications">
-
-		<!--
-        <f:entry title="${%API project number}" field="projectNumber"
-                 description="${%From the 'Overview' page of the Google APIs Console}">
-            <f:textbox name="${descriptor.PARAM_PROJECT_NUMBER}" value="${descriptor.projectNumber}" />
-        </f:entry>
-
-        <f:entry title="${%Server app API key}" field="apiKey"
-                 description="${%'Key for server apps' from the 'API Access' page of the Google APIs console}">
-            <f:textbox name="${descriptor.PARAM_API_KEY}" value="${descriptor.apiKey}" />
-	    </f:entry>
-		-->
 		
 		<f:entry title="${%Bot API key}" field="apiKey"
                  description="${%API KEY of the bot}">
