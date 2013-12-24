@@ -54,7 +54,7 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
 
     @Override
     public String getDisplayName() {
-        return Messages.Gcm_NotifyAndroidDevices();
+        return Messages.Mp_JobConfiguration();
     }
 
     @Override

@@ -12,8 +12,8 @@
     <groupId>com.anyonecantest.jenkins.plugins</groupId>
     <version>0.2</version>
     <packaging>hpi</packaging>
-    <name>Jenkins Daum My People Messanger Notification plugin</name>
-    <description>Sends notifications about jobs phases and status to Daum My People messanger (mypeople.daum.net‎)</description>
+    <name>Jenkins Daum My People Messenger Notification plugin</name>
+    <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net‎)</description>
     <url>https://github.com/anyone-can-test/mypeople-plugin</url>
     
     <developers>
