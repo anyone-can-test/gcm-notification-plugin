@@ -107,7 +107,7 @@ public class MyPeople {
 		JSONObject jo = JSONObject.fromObject(result);
 		int resultCode = Integer.valueOf((String)jo.get(MyPeople.RESULT_CODE_NAME));
 		if(resultCode != MyPeople.RESULT_OK) {
-			throw new MpImException((String)jo.get(MyPeople.RESULT_MESSAGE_NAME));
+			throw new MpImException((String)jo.get(MyPeople.RESULT_MESSAGE_NAME) + ", code: " + resultCode);
 		}
 		
 								
